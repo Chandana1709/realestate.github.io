@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+<style>
+    /*---------------------------------------*/
+/* Font */
+/*---------------------------------------*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+/*---------------------------------------*/
+/* Register Form */
+/*---------------------------------------*/
+body {
+  background:linear-gradient(to right, #ffffff 0%, #A9F1DF 100%, #ffffff 99%);
+  
+}
+
+.signup-form {
+  font-family: "Roboto", sans-serif;
+  width:650px;
+  margin:30px auto;
+  background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+  border-radius: 10px;
+}
+
+/*---------------------------------------*/
+/* Form Header */
+/*---------------------------------------*/
+.form-header  {
+   
+  background:linear-gradient( #ffffff 0%, #00B8BA 100%, #ffffff 99%);
+  color:#00B8BA;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.form-header h1 {
+  font-size: 30px;
+  text-align:center;
+  color:#666;
+  padding:20px 0;
+  border-bottom:1px solid #cccccc;
+}
+
+/*---------------------------------------*/
+/* Form Body */
+/*---------------------------------------*/
+.form-body {
+  padding:10px 40px;
+  color:#666;
+}
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-body .label-title {
+  color:#09899b;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.form-body .form-input {
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 34px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #333333;
+    text-align: left;
+    border: 1px solid #d6d6d6;
+    border-radius: 4px;
+    background: white;
+    outline: none;
+}
+
+
+
+.horizontal-group .left{
+  float:left;
+  width:50%;
+}
+
+.horizontal-group .right{
+  float:right;
+  width:50%;
+}
+
+input[type="file"] {
+  outline: none;
+  cursor:pointer;
+  font-size: 17px;
+}
+
+#range-label {
+  width:15%;
+  padding:5px;
+  background-color: #1BBA93;
+  color:white;
+  border-radius: 5px;
+  font-size: 17px;
+  position: relative;
+  top:-8px;
+}
+
+
+::-webkit-input-placeholder  {
+  color:#d9d9d9;
+}
+
+/*---------------------------------------*/
+/* Form Footer */
+/*---------------------------------------*/
+.signup-form .form-footer  {
+  background-color: #EFF0F1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding:10px 40px;
+  text-align: right;
+  border-top: 1px solid #cccccc;
+  clear:both;
+}
+
+.form-footer span {
+  float:left;
+  margin-top: 10px;
+  color:#999;  
+  font-style: italic;
+  font-weight: thin;
+}
+
+.btn {
+   display:inline-block;
+   padding:10px 20px;
+   background-color: ##1BBA93;
+   font-size:17px;
+   border:none;
+   border-radius:5px;
+   color:##1BBA93;
+   cursor:pointer;
+}
+.btn:hover {
+  background-color:#1BBA93;
+  color:white;
+
+
+</style>
+    <meta charset="utf-8">
+    <title>Add Property</title>
+    <link rel="stylesheet" href=""> 
+  </head>
+  
+
+  <body>
+   
+      <form name="myform" onsubmit="return validation()" class="signup-form" action="pinsert.php" method="POST" enctype="multipart/form-data">
+
+      <!-- form header -->
+      <div class="form-header">
+        <h1>Add Property</h1>
+      </div>
+
+      <!-- form body -->
+      <div class="form-body">
+
+        <!-- Firstname and Lastname -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="seller_name" class="label-title"> Name *</label>
+            <input type="text" id="seller_name" name="seller_name" class="form-input" placeholder="enter your name" required="required" />
+
+           
+          </div>
+           <div class="horizontal-group">
+          <div class="form-group right" >
+           <label for="type_of_property" class="label-title">Type of property</label>
+            <select class="form-input" name="type_of_property" id="type_of_property" required="required"/>
+              <option value="Independent House">Independent House/Villa</option>
+              <option value="Farmhouse">Farmhouse</option>
+              <option value="Other">Other</option>
+            </select>
+         
+      
+        </div>
+
+       
+        <!-- Passwrod and confirm password -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="city" class="label-title">City*</label>
+            <input type="text" id="city" class="form-input" name="city" placeholder="enter your city" required="required">
+          </div>
+          <div class="form-group right">
+            <label for="seller_contact_no" class="label-title">Contact No*</label>
+            <input type="text" class="form-input" id="seller_contact_no" name="seller_contact_no" placeholder="enter your contact no"  pattern="[0-9]*" maxlength="10" minlength="10" required="required">
+          </div>
+        </div>
+
+        <!-- Gender and Hobbies -->
+        <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="reserved_parking" class="label-title">Reserved Parking:</label>
+            <div class="input-group">
+              <label><input type="radio" name="reserved_parking" value="yes" id="reserved_parking" required="required" /> Yes</label><br>
+              <label><input type="radio" name="reserved_parking" value="no" id="reserved_parking" > No</label>
+            </div>
+          </div>
+        </div>
+            <div class="horizontal-group">
+          <div class="form-group left">
+            <label for="availability_status" class="label-title">Availability Status</label>
+          
+       
+              <div class="input-group">
+            <label ><input type="radio" name="availability_status" value="ready_to_move" id="availability_status" required/>Ready to move </label><br>
+              <label ><input type="radio" name="availability_status" value="still_in_construction" id="availability_status">still in construction </label>
+           </div>
+         </div>
+       
+            
+             
+          
+          
+              
+        <!-- Source of Income and Income -->
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label for="no_of_bedroom" class="label-title">No Bedroom</label>
+            <select class="form-input" id="no_of_bedroom" name="no_of_bedroom">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="More">More</option>
+              
+            </select>
+            <label for="no_of_bathroom" class="label-title">No Bathrooms</label>
+            <select class="form-input" id="no_of_bathroom" name="no_of_bathroom">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="More">More</option>
+
+            </select>
+           
+            <label for="balconies" class="label-title">Balconie</label>
+            <select class="form-input" id="balconies" name="balconies" >
+
+              <option value="1">1</option>
+              <option value="2">More</option>
+            </select>
+            
+            <label for="other_rooms" class="label-title">Other rooms</label>
+            <select class="form-input" id="other_rooms" name="other_rooms" >
+
+              <option value="Living Room">Living Room</option>
+              <option value="Dinning Room">dinning Room</option>
+              <option value="Study Room">Study Room</option>
+              <option value="Drawing Room">Drawing Room</option>
+              <option value="Other Room">Other rooms </option>
+            </select>
+             <label for="total_no_of_floor" class="label-title">No of Floors</label>
+            <select class="form-input" id="total_no_of_floor" name="total_no_of_floor">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">More</option>
+            </select>
+            <label for="floor_no" class="label-title">Your Floor</label>
+            <select class="form-input" id="floor_no" name="floor_no">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="other">other</option>
+            </select>
+
+
+
+
+          </div>
+          
+        </div>
+
+        <!-- Profile picture and Age -->
+        <div class="horizontal-group">
+          <div class="form-group left" >
+            <label for="images" class="label-title">Upload Property Picture</label>
+            <input type="file" id="images"  name="images"  />
+          </div>
+          <div class="form-group right">
+            <label for="age_of_property" class="label-title">Age of the property</label>
+            <input type="number" name="age_of_property" min="0" max="20"  value="0" class="form-input" />
+          </div>
+        </div>
+
+        < <div class="horizontal-group">
+        <div class="form-group">
+          <label for="special_prop1" class="label-title"><br><br><br><br><br><br><br><br><br>Speaciality of your property</label>
+          <textarea class="form-input"  name="special_prop1"rows="5" cols="50" style="height:auto"></textarea>
+        </div>
+      </div>
+
+      <!-- form-footer -->
+      <div class="form-footer">
+        <span>* required</span>
+         
+        <Button class="btn" type="submit" name="submit" value="submit">Create</Button>
+      </div>
+
+    </form>
+    <script>
+      var img=document.forms['myform']['images'];
+      var validExt=["jpeg","png","jpg"];
+      function validation(){
+        if(img.value!=''){
+          var img_ext=img.value.substring(img.value.lastIndexOf('.')+1);
+          var result=validExt.includes(img_ext);
+          if(result==false){
+            alert("selected files is not an image...");
+            return false;
+          }
+          else{
+            if(parseFloat(img.files[0].size/(1024*1024))>=3)
+            {
+              alert("Files size must be smaller than 3 mb");
+            }
+          }
+        }
+          else{
+            alert("no image is selected...");
+            return false;
+          }
+      }
+
+
+  
+</script>
+   
+  </body>
+</html>
+
+ 
+

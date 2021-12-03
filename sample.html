@@ -1,0 +1,28 @@
+<html>
+<body>
+<div class="input-group">
+
+       <div class="g-recaptcha" data-callback="verifyCaptcha" data-sitekey="6LcoA8QbAAAAALWlCxUEnz3T8n6HXkNAk7h7v5Ck" ></div>
+       <div id="g-recaptcha-error"></div>
+      </div>
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+ <script>
+function submitUserForm() {
+    var response = grecaptcha.getResponse();
+    console.log(response.length);
+    if(response.length == 0) {
+        document.getElementById('g-recaptcha-error').innerHTML = '<span style="color:red;">This field is required.</span>';
+        return false;
+    }
+    return true;
+}
+ 
+function verifyCaptcha() {
+  console.log('verified');
+    document.getElementById('g-recaptcha-error').innerHTML = '';
+}
+</script> 
+</body>
+</html>

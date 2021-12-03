@@ -1,0 +1,345 @@
+<html>
+<head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+  
+    <link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+      
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+      
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+    <style>
+      div.one{
+        margin-top:10px;
+        margin-left:210px;
+        text-align:left;
+      }
+</style>
+</head> 
+  
+   <body>
+    <div class="nav" id="navbar">
+            <nav class="nav__container">
+                <div>
+                    <a href="userdashboard.php" class="nav__link nav__logo">
+                       <i class='bx bxs-home-smile'></i> 
+                        <span class="nav__logo-name">Home Genie</span>
+                    </a>
+    
+                    <div class="nav__list">
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Profile</h3>
+    
+                            <a href="userdashboard.php" class="nav__link active">
+                                <i class='bx bx-home nav__icon' ></i>
+                                <span class="nav__name">Home</span>
+                            </a>
+                            
+                            <div class="nav__dropdown">
+                                <a href="userviewprofile.php" class="nav__link">
+                                    <i class='bx bx-user nav__icon' ></i>
+                                    <span class="nav__name">Profile</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="userviewprofile.php" class="nav__dropdown-item">View Profile</a>
+                                        <a href="userupdateprofile.php" class="nav__dropdown-item">Update Profile</a>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="feed.php" class="nav__link">
+                                <i class='bx bx-message-rounded nav__icon' ></i>
+                                <span class="nav__name">Feedback</span>
+                            </a>
+                        </div>
+    
+                        <div class="nav__items">
+                            <h3 class="nav__subtitle">Menu</h3>
+    
+                            <div class="nav__dropdown">
+                                <a href="#" class="nav__link">
+                                    <i class='bx bx-bell nav__icon' ></i>
+                                    <span class="nav__name">Seller</span>
+                                    <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                                </a>
+
+                                <div class="nav__dropdown-collapse">
+                                    <div class="nav__dropdown-content">
+                                        <a href="sellerprop.htm" class="nav__dropdown-item">Add Property</a>
+                                        <a href="#" class="nav__dropdown-item">Update/Delete</a>
+                                        
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <a href="cart.php" class="nav__link">
+                                <i class='bx bx-library nav__icon' ></i> 
+                                <span class="nav__name">Property Listing</span>
+                            </a>
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bookmark nav__icon' ></i>
+                                <span class="nav__name">Interested</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="home.html" class="nav__link nav__logout">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name">Log Out</span>
+                </a>
+            </nav>
+        </div>
+
+    <?php
+$servername="localhost";
+$username="root";
+$password="";
+$database="realestate";
+$user_id=$_GET['user_id'];  
+$conn=new mysqli($servername,$username,$password,$database);
+
+
+
+?>
+
+     <!--========== CONTENTS ==========-->
+
+               <form name="myform" onsubmit="return validation()"  action="sinsert.php" method="POST" enctype="multipart/form-data">
+    
+<div class="container">
+            <form class="form-horizontal" role="form">
+                <br><br><br><h2>Add Property Form</h2><br>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">User Id</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" name="user_id" placeholder="Full Name" class="form-control" autofocus disabled value="<?php echo $r['user_id']; ?>"> required="required" >
+                        <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-3 control-label">Full Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" name="seller_full_name" placeholder="Full Name" class="form-control" autofocus  required="required" >
+                        <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-3 control-label">City</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="seller_city" name="seller_city" placeholder="Enter City Of Your Property" class="form-control" required="required" >
+                    </div>
+                </div>
+                 
+                   <div class="form-group">
+                    <label for="country" class="col-sm-3 control-label">Type of property </label>
+                    <div class="col-sm-9">
+                        <select id="seller_type_of_property" name="seller_type_of_property" class="form-control"  required="required" >
+                            <option>select option</option>
+                            <option value="Independent House"></option>
+                            <option value="Villa">Villa</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Other">Other</option>
+                           
+                        </select>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="no of bedroom" class="col-sm-3 control-label">No of bedroom</label>
+                    <div class="col-sm-9">
+                        <select id="seller_no_of_bedroom" name="seller_no_of_bedroom" class="form-control" required="required">
+                            <option>select option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="More">More</option>
+                            
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="no of bathroom" class="col-sm-3 control-label">No of bathroom</label>
+                    <div class="col-sm-9">
+                        <select id="seller_no_of_bathroom" name="seller_no_of_bathroom" class="form-control" required="required">
+                            <option>select option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="More">More</option>
+                            
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="seller_other rooms" class="col-sm-3 control-label">Other rooms</label>
+                    <div class="col-sm-9">
+                        <select id="seller_other_rooms" name="seller_other_rooms" class="form-control" required="required">
+                            <option>select option</option>
+                            <option value="Living Room">Living Room</option>
+                            <option value="Dinning Room">Dinning Room</option>
+                              <option value="Study Room">Study Room</option>
+                               <option value="Drawing Room">Drawing Room</option>
+                            <option value="Other">Other</option>
+                            
+                           
+                        </select>
+                    </div>
+                </div>
+
+
+               
+               
+               <div class="form-group">
+                    <label for="no of floor" class="col-sm-3 control-label">Parking</label>
+                    <div class="col-sm-9"> <div class="form-group">
+                    <label class="control-label col-sm-3">Balconie</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="balconies" name="seller_balconies" id="seller_balconies"value="Yes"required="required">Yes
+                                </label>
+                            </div>
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" name="balconies" id="balconies" value="No">No
+                                </label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div> 
+                <div class="form-group">
+                    <label for="parking" class="col-sm-3 control-label">No of floor</label>
+                    <div class="col-sm-9">
+                
+                        <select id="seller_parking" name="seller_parking" class="form-control" required="required">
+                            <option>select option</option>
+                            <option value="Reserved Parking">Reserved Parking</option>
+                            <option value="Open Parking">Open Parking</option>
+                            
+                            
+                           
+                        </select>
+                    </div>
+                </div>
+                
+                 <div class="form-group">
+                    <label for="no of floor" class="col-sm-3 control-label">No of floor</label>
+                    <div class="col-sm-9">
+                        <select id="seller_total_no_of_floor" name="seller_total_no_of_floor" class="form-control" required="required">
+                            <option>select option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="More">More</option>
+                            
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="floor_no" class="col-sm-3 control-label">Floor no</label>
+                    <div class="col-sm-9">
+                        <select id="seller_floor_no" name="seller_floor_no" class="form-control" required="required">
+                            <option>select option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="More">More</option>
+                            
+                           
+                        </select>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="seller_availability_status" class="col-sm-3 control-label">Availability Status</label>
+                    <div class="col-sm-9">
+                        <select id="availability_status" name="seller_availability_status" class="form-control" required="required">
+                            <option>select option</option>
+                            <option value="Ready to move">Ready to move</option>
+                            <option value="Still in construction">Still in construction</option>
+                            
+                            
+                           
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                     <div class="col-sm-9">
+            <label for="seller_age_of_property" class="col-sm-3 control-label">Age of the property</label>
+            <input type="number" name="seller_age_of_property" min="0" max="20"  value="0" class="form-input" required="required"/>
+               </div>
+           </div>
+                
+            
+               <div class="form-group " >
+            <label for="images" class="col-sm-3">Upload Property Picture</label>
+            <input type="file" id="seller_images"   name="seller_images" multiple/>
+          </div>
+                
+                <br><div class="form-group">
+          <label for="seller_special_prop1" class="col-sm-3">Speaciality of your property</label>
+          <textarea class="form-control"  name="seller_special_prop1"rows="3" cols="6" style="height:auto"></textarea>
+        </div>
+      </div>
+      <div class="one">
+      <button type="submit" name="submit" value="submit"  class="btn btn-success active">Submit</button>
+  </div>
+
+            </form> 
+            <script>
+      var img=document.forms['myform']['seller_images'];
+      var validExt=["jpeg","png","jpg"];
+      function validation(){
+        if(img.value!=''){
+          var img_ext=img.value.substring(img.value.lastIndexOf('.')+1);
+          var result=validExt.includes(img_ext);
+          if(result==false){
+            alert("selected files is not an image...");
+            return false;
+          }
+          else{
+            if(parseFloat(img.files[0].size/(1024*1024))>=3)
+            {
+              alert("Files size must be smaller than 3 mb");
+            }
+          }
+        }
+          else{
+            alert("no image is selected...");
+            return false;
+          }
+      }
+
+</script>
+        </div>
+        </form> 
+<script src="assets1/js/main.js"></script>
+   
+</body>
+</head>

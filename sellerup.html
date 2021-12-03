@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <!-- CSS files-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+   </head>
+    <body>
+    <!-- page content -->
+    <div style="text-align:right; font-size:18px; width:95%; margin-top:1%"><a href="https://stackfame.com/editable-html-table-using-javascript-jquery/" ><a href="https://stackfame.com/"></a></div>
+ <br>
+ <?php
+$servername="localhost";
+$username="root";
+$password="";
+$database="realestate";
+
+$conn=new mysqli($servername,$username,$password,$database);
+if($conn->connect_error){
+  die("connection failed <br>" .$conn->connect_error);
+}
+/*else{
+  echo"connection success <br>";
+}*/
+$s=mysqli_query($conn,"select * from property");
+?>
+    <h1 class="col-md-12 text-center" style="color: black">  </h1>
+   
+    
+    <br>
+    <div class="table-responsive col-md-10">
+
+<table class="table table-bordered table-striped table-hover table-condensed  text-center" id="DyanmicTable">
+	<thead>
+		<tr>
+			<th class="text-center">
+				Property Id
+			</th>
+			<th class="text-center">
+				Seller Name
+			</th>
+			<th class="text-center">
+				City
+			</th>
+			<th class="text-center">
+				Type of property
+			</th>
+			<th class="text-center">
+				No of bedroom
+			</th>
+			<th class="text-center">
+				No of bathroom
+			</th>
+			<th class="text-center">
+				Other rooms
+			</th>
+			<th class="text-center">
+				Balconies
+			</th>
+			<th class="text-center">
+				Reserved parking
+			</th>
+			<th class="text-center">
+				Total  no of floor
+			</th>
+			<th class="text-center">
+				Floor no
+			</th>
+			<th class="text-center">
+				Availability Status
+			</th>
+			<th class="text-center">
+				Age of property
+			</th>
+			<th class="text-center">
+				Seller contact no
+			</th>
+			<th class="text-center">
+			speciality of property
+		</th>
+		
+
+				<th class="text-center">
+<tbody>
+		<tr>
+			<td>
+				John M
+			</td>
+			<td>
+				http://john-m.com
+			</td>
+			<td>
+				9876543210
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Ariana Smith
+			</td>
+			<td>
+				https://araiana-smith.com
+			</td>
+			<td>
+				1234567890
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Silver Bourne
+			</td>
+			<td>
+				https://silver-bourne.com
+			</td>
+			<td>
+				988889888
+			</td>
+		</tr>
+		<tr>
+			<td>
+				Rahul Ray
+			</td>
+			<td>
+				https://rahul-ray.com
+			</td>
+			<td>
+				9797979797
+			</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+    <!--JS Files-->
+<script  src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="   crossorigin="anonymous"></script>
+<script src="bootstable.min.js"></script>
+<script>
+ $('#DyanmicTable').SetEditable({ $addButton: $('#addNewRow')});
+</script>
+  </body>
+</html>

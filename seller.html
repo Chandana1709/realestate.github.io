@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Icon inside Input Field - Demo Preview</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta content="noindex, nofollow" name="robots">
+<!-- Include CSS File Here -->
+<link href="css/form1.css" rel="stylesheet">
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body
+{
+  display: flex;
+  justify-content: center;
+  font-family: 'Kumbh Sans', sans-serif;
+  background-image: url("propertyform.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+  opacity :0.9;
+}
+
+img#logo{
+margin-left:90px
+}
+div#first{
+width:400px;
+height:600px;
+margin:50px auto 0;
+padding:50px;
+background-color:#C0C0C0;
+color:#333;
+border:2px solid #C2D6FF;
+border-radius:40px 0 40px 0
+}
+label{
+  text-align: center;
+  label-align:center;
+	align-items :center;
+font-size:15px;
+font-weight:200
+}
+
+input#submit {
+background-color:#cc7a66;
+border-radius:10px;
+border:none;
+padding:20px 30px;
+color:#FFF;
+text-shadow:1px 1px 1px #949494;
+margin-left:200px
+}
+input#submit:hover{
+background-color:#FF9980
+}
+
+</head>
+</style>
+<body>
+	 <a class="fa fa-arrow-left" href="http://localhost/project 2/userdashboard.php" style="font-size:50px; color: blue; margin-left: 00%; margin-top :06px;text-decoration: none;" ></a>
+<div id="first">
+<h1><u><b>ADD PROPERTY</b></u></h1>
+<br><br>
+                <div>
+                    
+                    <form  action="sellerproperty.php" method="POST">
+                     <label for="property_id"><b>:</b>property_id:</label>
+                     <input type="text" name="property_id" required><br><br>
+                     <label for="seller_name"><b>seller_name:</b></label>
+                     <input type="text" name="seller_name" required><br><br>
+                     <label for="city"><b>city:</b></label>
+                     <input type="text" name="city" required><br><br>
+                     <label for="no_of_bedrooms"><b>no_of_bedrooms:</b></label>
+                     <input type="text" name="no_of_bedrooms" required><br><br>
+                     <label for="no_of_bathrooms"><b>no_of_bathrooms:</b></label>
+                     <input type="text" name="no_of_bathrooms" required><br><br>
+                     <label for="balconies"><b>balconies:</b></label>
+                     <input type="text" name="balconies" required><br><br>
+                     <label for="other_rooms"><b>other_rooms:</b></label>
+                     <input type="text" name="other_rooms" required><br><br>
+                     <label for="reserved_parking"><b>reserved_parking:</b></label>
+                     <input type="text" name="reserved_parking" required><br><br>
+                     <label for="total_no_of_floor"><b>total_no_of_floor:</b></label>
+                     <input type="text" name="total_no_of_floor" required><br><br>
+                     <label for="floor _no"><b>floor_no:</b></label>
+                     <input type="text" name="floor_no" required><br><br>
+                     <label for="availability_status"><b>availability_status:</b></label>
+                     <input type="text" name="availability_status" required><br><br>
+                    
+                     <label for="seller_contact_no"><b>seller_contact_no:</b></label>
+                     <input type="text" name="seller_contact_no" required><br><br>
+                     <label for="images"><b>Images:</b></label>
+                     <input type="file" id="images" name="images" required><br><br>
+                    
+                     <label for="special_prop1"><b>Special about your property:</b></label>
+                     <input type="text" id="special_prop1" name="special_prop1" required><br><br>
+                     <input type="submit" name="submit" onclick="location.href='propertylisting.html'"value="SUBMIT"><br>
+
+                     
+                     </div>
+                     <br><br>
+</body>
+</html>

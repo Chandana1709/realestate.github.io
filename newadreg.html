@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Admin Registerform</title>
+  <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Admin Dashboard</title>
+  <style>
+     .container {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.RegisterButton{
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.RegisterButton:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+  </style>
+</head>
+<script>
+       function checkpassword(form){
+     admin_password = form.admin_password.value;
+     confirmpassword = form.confirmpassword.value;
+     if(admin_password != confirmpassword){
+     alert("Passwords did not match!\nPlease enter same password in both the fields.")
+     return false;
+     }
+     else{
+     return true;
+     }
+  }
+</script>
+<body id="body-pd">
+
+        <header class="header" id="header">
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+
+            <div class="header__img">
+                <img src="" alt="">
+            </div>
+        </header>
+
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo">
+                        <i class='bx bxs-user nav__icon'></i> 
+                        <span class="nav__logo-name">Admin</span>
+                    </a>
+
+                    <div class="nav__list">
+                        <a href="admindashboard.php" class="nav__link active">
+                        <i class='bx bx-grid-alt nav__icon' ></i>
+                            <span class="nav__name">Dashboard</span>
+                        </a>
+                         <a href="adminay.php" class="nav__link">
+                            <i class='bx bx-box nav__icon' ></i> 
+                            <span class="nav__name">Overview</span>
+                        </a>
+
+
+                        <a href="adminviewprofile.php" class="nav__link">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__name">Users</span>
+                        </a>
+                        
+                        <a href="propadd.php" class="nav__link">
+                            <i class='bx bx-home nav__icon' ></i>
+                            <span class="nav__name"> Add Property </span>
+                        </a>
+                        
+                            <a href="up2.php" class="nav__link">
+                            <i class='bx bx-pencil nav__icon' ></i>
+                            <span class="nav__name">Update/Delete</span></a>
+
+                          
+                      
+                       <a href="newadreg.html" class="nav__link">
+                            <i class='bx bx-user-plus nav__icon'></i> 
+                            <span class="nav__name">Add Admin</span>
+                        </a>
+
+                          
+                      <a href="fetch.php" class="nav__link">
+                            <i class='bx bx-book-heart nav__icon'></i> 
+                            <span class="nav__name">Favorites</span>
+                        </a>
+
+                        <a href="viewfeedback.php" class="nav__link">
+                            <i class='bx bx-box nav__icon' ></i> 
+                            <span class="nav__name">Feedback View</span>
+                        </a>
+                         <a href="blog.php" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon' ></i>
+                            <span class="nav__name">Article </span>
+                        </a>
+
+
+                        <a href="home.html" class="nav__link">
+                            <i class='bx bx-log-out nav__icon'></i>
+                            <span class="nav__name">Logout</span>
+                        </a>
+                    </div>
+                </div>
+
+               
+            </nav>
+        </div>
+
+        <!--===== MAIN JS =====-->
+        
+   
+
+    <h1> Admin Register</h1>
+       <p>Please fill in this form to create an account.</p>
+        <form action="admin_reg.php" method="POST" style="text_align:centre;">
+      
+        <label><b>Admin Name</b></label>
+         
+        <input type ="text" name="adname" id="adname"  placeholder = "Full Name" required>
+      
+         
+        <label><b>Admin ID</b></label>
+        
+        <input type ="text" name="admin_id" id="admin_id" pattern="[A-Za-z0-9]{8}" title="Can contain letters and numbers which is of 8 characters" placeholder = "User Id" required>
+      
+       
+       <label><b>Email Id</b></label>
+        
+        <input type ="text" name="admin_email_id" id="admin_email_id"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder = "Email Id" required>
+      
+      <label><b>Mobile No</b></label>
+        
+        <input type ="text" name="admin_mobile_no" id="admin_mobile_no"  pattern="[0-9]*" maxlength="10" minlength="10" placeholder = "Mobile No" required>
+      </div>
+
+       
+          <label><b>Password</b></label>
+                   <input type="password" name="admin_password" id="admin_password" placeholder="password" pattern="(?=.*\d)(?=.*[A-Z]).{6,}" title="Must contain atleast one number and one uppercase letter and have atleast 6 or more characters" required>
+                 
+                  <label><b> Confirm Password</b></label>
+                   <input type="password" name="confirmpassword" id="confirmpassword" placeholder=" Confirm Password" required>
+
+                   <hr>
+
+    
+    <button type="submit" value="Register" class="RegisterButton" type="submit"  onclick="return checkpassword(form)">Register</button>
+  </div>
+
+
+           </form>
+         </body>
+         </html>
+          
+              
+           
+
+         
+        </div>
+
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+subscribe to make payments subscription days
+
+after payments property listings  view lististings
+add mobileno,costof the property , s5z6f the  property table
+display 
+
+
+basic ,std,pre
+
+**********************************************
+create table plan(Plan_id varchar(100),Plan_Description varchar(100),Plan_Duration varchar(100),Plan_Amount varchar(100));
+
+create table UserPlan(Plan_id varchar(100),Plan_Description varchar(100),Plan_Duration varchar(100),Plan_Amount varchar(100),Plan_Start_Date varchar(100),Plant_End_Date varchar(100),Email_id varchar(100));
+
+
+
+UPDATE PROPERTY SET MOBILENO='123',SIZE_OF_PROPERTY='1200',COST_OF_THE_PROPERTY='600000' WHERE PROPERTY_ID='2';
+UPDATE PROPERTY SET MOBILENO='456',SIZE_OF_PROPERTY='6200',COST_OF_THE_PROPERTY='6000001' WHERE PROPERTY_ID='4';
+
+UPDATE PROPERTY SET MOBILENO='789',SIZE_OF_PROPERTY='3200',COST_OF_THE_PROPERTY='6000002' WHERE PROPERTY_ID='5';
+
+UPDATE PROPERTY SET MOBILENO='987',SIZE_OF_PROPERTY='4200',COST_OF_THE_PROPERTY='6000003' WHERE PROPERTY_ID='6';
+
+Manushree@2000
+Dhanya@2000
+echo '<script>alert("Sorry ,You Dont have subscription");window.location="cart.php";</script>';
+
+update userplan set Plan_Start_Date ='2021/05/05' , Plant_End_Date ='2021/06/06'
+update userplan set plant_End_date='2021/06/06';
+update userplan set plant_End_date='2021/08/06';
