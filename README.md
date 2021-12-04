@@ -1,5 +1,4 @@
 # realestate.github.io
-Real Estate Management System
 
 # Real Estate Management System
 
@@ -15,6 +14,7 @@ Real Estate Management System
 - Google re-Capcha api is used and it is mandatory while registering to our website.
 
 - Razor pay api is used for test mode paypent.
+- 
 ## Language Used
 
 PHP,HTML,CSS,Java Script,Bootstrap. 
@@ -24,14 +24,11 @@ PHP,HTML,CSS,Java Script,Bootstrap.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
-
+<img src="https://user-images.githubusercontent.com/95367438/144710960-edca58cc-7ef4-4cd8-b6a8-0934b9de4c79.png" width="500" height="280">
 
 ## Installation
 
-
-```
-1.Download latest version of xampp.
+Download latest version of xampp server.
 
 ## Run Locally
 
@@ -39,12 +36,3 @@ PHP,HTML,CSS,Java Script,Bootstrap.
 - import .sql file in xammp.
 - Go to browser type:localhost/project2/index.html.
 
-
- Support
-
-For support, email chandanam1709@gmail.com.
-
-
- 🔗 Links
-
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/chandana-m-81693b205/)
